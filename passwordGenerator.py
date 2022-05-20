@@ -24,10 +24,21 @@ def generatePassword():
     random.shuffle(password)
     print(''.join(password))
 
+# function that asks the user to input the number of passwords they want to be generated
+def inputNumber():
+    while True:
+        print("How many passwords would you like? (up to 10)")
+        num = input()   
+        if num not in '123456789':
+            print("Please enter a number between 1 and 9.")
+        else:
+            return num
+
 # start of program
 print("Welcome to the Password Generator")
 print("================================")
-number = input("How many passwords would you like? (up to 10)") # to do: make sure that the input is an integer less than 10. if not, prompt user to re-enter
+
+number = inputNumber()
 
 for i in range(int(number)):
     generatePassword()
